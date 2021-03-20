@@ -11,8 +11,8 @@ function App() {
 
         {/* Route content */}
         <Switch>
-          <Route path="/page1" component={lazy(() => import(/* webpackPrefetch: true */ './pages/Page1'))}/>
-          <Route path="/page2" component={lazy(() => import(/* webpackPrefetch: true */ './pages/Page2'))}/>
+          <Route path="/page1" component={lazy(() => import('./pages/Page1'))}/>
+          <Route path="/page2" component={lazy(() => import('./pages/Page2'))}/>
         </Switch>
       </Suspense>
     </Router>
