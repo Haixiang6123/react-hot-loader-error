@@ -1,26 +1,16 @@
-import React, {Suspense, useState} from 'react'
+import React, {lazy, Suspense} from 'react'
 import {HashRouter as Router, Route, Switch} from 'react-router-dom'
-import Tabs from './Tabs'
-import basePageRoutes from './router'
-
-const initPages = ['page1', 'page2']
+import Tabs from './components/Tabs'
 
 function App() {
-  const [pages] = useState(initPages)
-
   return (
     <Router>
-      <Tabs pages={pages}/>
+      <Tabs/>
 
       <Suspense fallback={<div>Loading...</div>}>
         <Switch>
-          {basePageRoutes.map(route => (
-            <Route
-              key={route.pathname}
-              path={route.pathname}
-              component={route.component}
-            />
-          ))}
+          <Route path="/page1" component={lazy(() => import(/* webpackPrefetch: true */ './pages/Page1'))} />
+          <Route path="/page2" component={lazy(() => import(/* webpackPrefetch: true */ './pages/Page2'))} />
         </Switch>
       </Suspense>
     </Router>

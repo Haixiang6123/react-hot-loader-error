@@ -2,11 +2,7 @@ import * as React from 'react'
 import {useEffect, useState} from 'react'
 import {get} from 'idb-keyval'
 
-interface Props {
-  pages: string[]
-}
-
-const Tabs: React.FC<Props> = () => {
+const Tabs: React.FC = () => {
   // Show Counter
   const [, setCounter] = useState(0);
 
