@@ -7,14 +7,13 @@ const Tabs: React.FC = () => {
 
   useEffect(() => {
     // Get userId from cache(indexedDB)
+    // Remove get('userId') or remove setUserId would solve the warning
     get('userId').then((result) => {
       setUserId(result)
     })
   }, []);
 
-  return (
-    <div>Tabs</div>
-  )
+  return <div>Tabs</div>
 }
 
 export default Tabs

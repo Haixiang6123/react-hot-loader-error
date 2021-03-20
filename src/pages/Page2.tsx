@@ -1,9 +1,5 @@
 import * as React from 'react'
 
-const Page2: React.FC = () => {
-  return (
-    <div>Page 2</div>
-  )
-}
+const Page2 = () => <div>Page2</div>
 
 export default Page2
