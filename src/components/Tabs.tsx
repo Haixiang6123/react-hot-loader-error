@@ -3,12 +3,12 @@ import {useEffect, useState} from 'react'
 import {get} from 'idb-keyval'
 
 const Tabs: React.FC = () => {
-  // Show Counter
-  const [, setCounter] = useState(0);
+  const [, setUserId] = useState('');
 
   useEffect(() => {
-    get('xxx').then(() => {
-      setCounter(1)
+    // Get userId from cache(indexedDB)
+    get('userId').then((result) => {
+      setUserId(result)
     })
   }, []);
 
